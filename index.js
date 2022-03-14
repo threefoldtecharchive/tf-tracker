@@ -30,7 +30,9 @@ const tfTracker = (function () {
 
         window.addEventListener("click", (e) => {
           if (!(e.target instanceof HTMLAnchorElement)) return;
-          sendRequest("move");
+          requestAnimationFrame(() => {
+            sendRequest("move");
+          });
         });
 
         window.addEventListener("beforeunload", function () {
